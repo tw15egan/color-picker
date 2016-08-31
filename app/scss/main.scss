@@ -1,0 +1,141 @@
+@import 'reset';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  height: 100%;
+  width: 100%;
+}
+
+.color {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  font-family: 'usual';
+  position: relative;
+  
+  &__heading {
+    position: absolute;
+    top: 0;
+    padding: 1rem;
+    width: calc(100% / 3);
+    min-width: 170px;
+    font-size: .75rem;
+    background-color: #3C4C55;
+    color: #fff;
+    opacity: .85;
+    z-index: 20;
+  }
+  
+  &__box {
+    flex: 1;
+    height: 100%;
+    min-width: 170px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  &__code {
+    align-self: center;
+    margin-bottom: 1rem;
+    position: relative;
+    background-color: #3C4C55;
+    color: #fff;
+    border-radius: 5px;
+    padding: 1rem 3rem 1rem 1rem;
+    cursor: pointer;
+    width: auto;
+    font-size: .75rem;
+    min-width: 100px;
+    transition: all 275ms;
+    white-space: nowrap;
+    
+    &:hover {
+      background-color: lighten(#3C4C55, 10%);
+      
+      &::after {
+        color: #fff;
+        transition: all 275ms;
+        background-color: #3C4C55;
+      }
+    }
+    
+    &::after {
+      display: inline-flex;
+      transition: all 275ms;
+      content: '+';
+      align-items: center;
+      justify-content: center;
+      padding: 1rem .5rem;
+      position: absolute;
+      right: 0;
+      background-color: darken(#3C4C55, 5%);
+      bottom: 0;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+  
+  &__form {
+    background-color: #3C4C55;
+    color: #fff;
+    padding: .5rem 1.75rem .5rem .75rem;
+  }
+  
+  &__slider {
+    width: 85%;
+    color: #fff;
+    &--label {
+      padding-top: .5rem;
+      font-size: .75rem;
+      opacity: 0.88;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  background: transparent; /* Otherwise white in Chrome */
+  
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  &::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+  }
+  
+  &::-webkit-slider-thumb {
+    background-color: #fff;
+    height: 15px;
+    width: 15px;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-slider-runnable-track {
+    background-color: lighten(#3C4C55, 10%);
+    border-radius: 4px;
+  }
+  
+  &:focus {
+    outline: none;
+    
+    &::-webkit-slider-runnable-track {
+      background-color: lighten(#3C4C55, 20%);
+    }
+  }
+}
