@@ -17,7 +17,7 @@ const common = {
   },
   output: {
     path: PATHS.build,
-    publicPath: '/color-picker/',
+    // publicPath: '/color-picker/',
     filename: 'bundle.js',
   },
   module: {

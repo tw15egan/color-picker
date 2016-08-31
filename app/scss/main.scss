@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  transition: 275ms all;
 }
 
 html, body, #app {
@@ -137,5 +138,21 @@ input[type=range] {
     &::-webkit-slider-runnable-track {
       background-color: lighten(#3C4C55, 20%);
     }
+  }
+}
+
+.social {
+ position: absolute;
+ right: 0; top: 0;
+ padding: 1rem;
+  
+ img {
+   height: 25px;
+   width: 25px;
+   margin-left: .5rem;
+   
+   &:hover {
+     transform: scale(1.3);
+   }
   }
 }
